@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="CollectionNameAttribute.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="PoetQuery.cs" />
+    <Compile Include="MongoPoet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
