@@ -33,5 +33,10 @@ namespace MongoPoet
         {
             return new MongoPoet<T>(mongoDb, mongoDb.GetCollection<T>(CollectionName(typeof(T)))); 
         }
+
+        static public MongoPoet<T> From<T>(this MongoDatabase mongoDb, string collectionName)
+        {
+            return new MongoPoet<T>(mongoDb, mongoDb.GetCollection<T>(collectionName));
+        }
     }
 }

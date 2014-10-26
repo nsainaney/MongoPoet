@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver.Linq;
 using System.Linq.Expressions;
+using MongoDB.Bson;
 
 namespace MongoPoet
 {
@@ -69,6 +70,12 @@ namespace MongoPoet
         public WriteConcernResult Remove()
         {
             return Collection.Remove(MongoQuery);
+        }
+
+        public WriteConcernResult Remove(object id)
+        {
+            return Collection.Remove(MongoDB.Driver.Builders.Query.EQ("_id", BsonValue.Create(id)));
+
         }
 
         public WriteConcernResult RemoveAll()
