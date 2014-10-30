@@ -88,6 +88,11 @@ namespace MongoPoet
             return Collection.Update(MongoQuery, MongoDB.Driver.Builders.Update.Replace(entity), flags);
         }
 
+        public T FindOneByObjectId<T>(ObjectId objectId)
+        {
+            return Collection.FindOneByIdAs<T>(objectId);
+        }
+
         public T Single()
         {
             return Query.Single();
